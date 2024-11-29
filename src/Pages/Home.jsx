@@ -1,4 +1,5 @@
 import Banner from '../Components/Banner'
+import Offer from '../Components/Offer'
 import SlicedProducts from '../Components/SlicedProducts'
 import { Link } from 'react-router-dom'
 
@@ -14,6 +15,9 @@ const Home = () => {
             <Link to={"/products"}>View All Products</Link>
           </button>
         </div>
+
+        {/* Offer Section */}
+        <Offer />
 
     </>
   )
