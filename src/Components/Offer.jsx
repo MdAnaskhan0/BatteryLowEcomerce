@@ -4,10 +4,10 @@ import {  FaArrowRight } from "react-icons/fa";
 
 const Offer = () => {
   return (
-    <div className="relative container mx-auto bg-gradient-to-r from-gray-600 to-gray-800 text-white py-40 px-20 my-10 rounded-xl text-center">
+    <div className="relative container mx-auto bg-gradient-to-r from-gray-600 to-gray-800 text-white py-40 px-20 my-10 rounded-lg text-center">
       {/* Sticky Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed opacity-40 rounded-xl"
+        className="absolute inset-0 bg-cover bg-center bg-fixed opacity-40 rounded-lg"
         style={{ backgroundImage: `url(${BannerImg})` }} // Correct way to use the imported image
       ></div>
 
