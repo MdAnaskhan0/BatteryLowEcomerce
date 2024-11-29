@@ -1,32 +1,42 @@
+import { useParams } from "react-router-dom";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { ProductsContext } from "../Context/ProductsContext";
 import { CartContext } from "../Context/CartContext";
-import ProductHeading from "./ProductHeading";
-import ProductStar from "./ProductStar";
+import { useNavigate } from "react-router-dom";
+import ProductStar from "../Components/ProductStar";
 
-const AllProducts = () => {
-  const { products, isLoading, error } = useContext(ProductsContext);
+const CategoryProduct = () => {
+  const { category } = useParams();
+  const { products } = useContext(ProductsContext);
   const { addToCart } = useContext(CartContext);
-  const navigate = useNavigate(); // React Router's navigation hook
 
-  if (isLoading)
-    return <div className="text-center text-xl py-20">Loading...</div>;
-  if (error)
-    return <div className="text-center text-red-600 py-20">{error}</div>;
+  const filteredProducts = products.filter(
+    (product) => product.category === category
+  );
+
+  const navigate = useNavigate();
 
   const handleShowDetails = (id) => {
     navigate(`/product/${id}`); // Navigate to the product details page
   };
 
+
   return (
-    <div className="container mx-auto px-4 py-10">
+    <>
+      <div className="container mx-auto px-4 py-10">
       {/* Products heading */}
-      <ProductHeading />
+      
+      <div className="text-center">
+        <p className="text-lg my-4 text-gray-600">A Brush of Perfection</p>
+        <h1 className="text-5xl font-bold mb-3">Check out our <span className="text-indigo-800 uppercase">{category}</span> products</h1>
+        <p className="text-md text-gray-600 mb-10">
+          Explore a variety of amazing products tailored just for you!
+        </p>
+      </div>
 
       {/* Product grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <div
             key={product.id}
             className="border rounded-lg p-4 shadow-sm hover:shadow-lg transition"
@@ -53,7 +63,7 @@ const AllProducts = () => {
             </p>
             <ProductStar />
             <p className="text-black font-bold mt-4 text-xl">
-              {product.discount?(product.price - (product.price * product.discount) / 100).toFixed(0):product.price}
+            {product.discount?(product.price - (product.price * product.discount) / 100).toFixed(0):product.price}
               <span className="">৳</span> 
             </p>
 
@@ -80,7 +90,8 @@ const AllProducts = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
-export default AllProducts;
+export default CategoryProduct;

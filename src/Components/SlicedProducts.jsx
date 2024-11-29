@@ -5,18 +5,21 @@ import { CartContext } from "../Context/CartContext";
 import ProductHeading from "./ProductHeading";
 import ProductStar from "./ProductStar";
 
-const AllProducts = () => {
+const SlicedProducts = () => {
   const { products, isLoading, error } = useContext(ProductsContext);
   const { addToCart } = useContext(CartContext);
-  const navigate = useNavigate(); // React Router's navigation hook
+  const navigate = useNavigate();
 
   if (isLoading)
     return <div className="text-center text-xl py-20">Loading...</div>;
   if (error)
     return <div className="text-center text-red-600 py-20">{error}</div>;
 
+  // Slice the products dynamically (first 4 products)
+  const sliceProducts = products.slice(0, 12);
+
   const handleShowDetails = (id) => {
-    navigate(`/product/${id}`); // Navigate to the product details page
+    navigate(`/product/${id}`); // Navigate to product details
   };
 
   return (
@@ -26,7 +29,7 @@ const AllProducts = () => {
 
       {/* Product grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
+        {sliceProducts.map((product) => (
           <div
             key={product.id}
             className="border rounded-lg p-4 shadow-sm hover:shadow-lg transition"
@@ -36,16 +39,11 @@ const AllProducts = () => {
               alt={product.title}
               className="w-full h-48 object-contain mb-8"
             />
-            <h2 className="text-lg font-semibold mt-5">
+            <h2 className="text-lg font-semibold my-5">
               {product.title.length > 20
                 ? `${product.title.slice(0, 20)}...`
                 : product.title}
             </h2>
-            <p className="text-lg text-gray-800 truncate mb-4">
-              {product.brand.length > 20
-                ? `${product.brand.slice(0, 20)}...`
-                : product.brand}
-            </p>
             <p className="text-sm text-gray-600 truncate mb-2">
               {product.description.length > 50
                 ? `${product.description.slice(0, 50)}...`
@@ -53,7 +51,7 @@ const AllProducts = () => {
             </p>
             <ProductStar />
             <p className="text-black font-bold mt-4 text-xl">
-              {product.discount?(product.price - (product.price * product.discount) / 100).toFixed(0):product.price}
+            {product.discount?(product.price - (product.price * product.discount) / 100).toFixed(0):product.price}
               <span className="">৳</span> 
             </p>
 
@@ -61,7 +59,6 @@ const AllProducts = () => {
             <del> {product.price}</del>
               <span>৳</span> <span className="text-red-600">-{product.discount?product.discount:0}%</span>
             </p>
-
             <div className="mt-4 flex items-center gap-4">
               <button
                 onClick={() => handleShowDetails(product.id)}
@@ -83,4 +80,4 @@ const AllProducts = () => {
   );
 };
 
-export default AllProducts;
+export default SlicedProducts;
