@@ -10,6 +10,23 @@ const LoginSignupButton = () => {
     navigate("/login");
   };
 
+  const userInformation = localStorage.getItem("currentUser");
+  const user = userInformation ? JSON.parse(userInformation) : null;
+
+  if (user) {
+    return (
+      <div className="flex gap-5 items-center text-md font-medium">
+        <span className="text-gray-600"><Link to={'/user'}>{user.name}</Link></span>
+        <button
+          onClick={handleLogout}
+          className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+        >
+          Logout
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="flex gap-5 items-center text-md font-medium">
       {isLoggedIn ? (

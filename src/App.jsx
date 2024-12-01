@@ -19,9 +19,10 @@ import Contact from "./Pages/Contact";
 import CategoryProduct from "./Pages/CategoryProduct";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
+import UserInfo from "./Pages/UserInfo";
 import PrivateRoute from "./Routes/PrivateRoute";
-import { ToastContainer } from "react-toastify"; // Import ToastContainer
-import "react-toastify/dist/ReactToastify.css"; // Make sure the CSS for Toastify is imported
+import { ToastContainer } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css"; 
 
 // ScrollToTop component
 function ScrollToTop() {
@@ -52,6 +53,14 @@ function App() {
                   element={
                     <PrivateRoute>
                       <Cart />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/user"
+                  element={
+                    <PrivateRoute>
+                      <UserInfo />
                     </PrivateRoute>
                   }
                 />

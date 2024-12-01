@@ -36,7 +36,7 @@ const Login = () => {
       toast.success("Login successful!",{position:"top-right",autoClose:1000});
       setTimeout(() => {
         navigate("/");
-        window.location.reload();
+        // window.location.reload();
       },1500)
     } else {
       // Handle invalid login

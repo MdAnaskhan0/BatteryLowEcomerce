@@ -11,6 +11,8 @@ const signupSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
   password: z.string().min(6, "Password must be at least 6 characters"),
+  phone: z.string().min(11, "Phone number must be at least 10 digits"),
+  address: z.string().min(10, "Address must be at least 10 characters"),
 });
 
 const Signup = () => {
@@ -34,7 +36,10 @@ const Signup = () => {
     }
 
     localStorage.setItem("users", JSON.stringify([...users, data]));
-    toast.success("Signup successful!", {position:"top-right",autoClose:1000});
+    toast.success("Signup successful!", {
+      position: "top-right",
+      autoClose: 1000,
+    });
     navigate("/login");
   };
 
@@ -43,10 +48,8 @@ const Signup = () => {
       <h2 className="text-2xl font-bold mb-4 capitalize">Create an account</h2>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div className="mb-4">
-          <label htmlFor="name" className="block text-gray-700 font-medium">
-            Name
-          </label>
           <input
+            placeholder="Enter your name"
             id="name"
             type="text"
             {...register("name")}
@@ -58,10 +61,8 @@ const Signup = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-700 font-medium">
-            Email
-          </label>
           <input
+            placeholder="Enter your email"
             id="email"
             type="email"
             {...register("email")}
@@ -73,10 +74,8 @@ const Signup = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="password" className="block text-gray-700 font-medium">
-            Password
-          </label>
           <input
+            placeholder="Enter your password"
             id="password"
             type="password"
             {...register("password")}
@@ -88,8 +87,35 @@ const Signup = () => {
             </p>
           )}
         </div>
+        <div className="mb-4">
+          <input
+            placeholder="Enter your phone"
+            id="phone"
+            type="text"
+            {...register("phone")}
+            className="mt-1 p-2 w-full border rounded-md"
+          />
+          {errors.phone && (
+            <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+          )}
+        </div>
 
-        <button 
+        <div className="mb-4">
+          <input
+            placeholder="Enter your address"
+            id="address"
+            type="text"
+            {...register("address")}
+            className="mt-1 p-2 w-full border rounded-md"
+          />
+          {errors.address && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.address.message}
+            </p>
+          )}
+        </div>
+
+        <button
           type="submit"
           className="w-full bg-gradient-to-r from-indigo-500 to-indigo-600 text-white py-2 px-4 rounded-md hover:bg-gradient-to-r hover:from-indigo-600 hover:to-indigo-500 transition ease-in-out duration-300"
         >
