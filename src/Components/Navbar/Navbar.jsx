@@ -4,6 +4,7 @@ import CartLink from "./CartLink";
 import Logo from "./Logo";
 import MobileMenu from "./MobileMenu";
 import { ProductsContext } from "../../Context/ProductsContext";
+import LoginSignupButton from "./LoginSignupButton";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -88,6 +89,9 @@ const Navbar = () => {
           {/* Cart Link */}
           <CartLink />
         </div>
+
+        {/* Login/Signup Button */}
+        <LoginSignupButton />
 
         {/* Mobile Hamburger Menu */}
         <div className="md:hidden flex items-center">
