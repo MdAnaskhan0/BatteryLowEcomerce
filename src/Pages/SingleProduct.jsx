@@ -39,7 +39,7 @@ const SingleProduct = () => {
 
         {/* Product Info */}
         <div className="lg:w-1/2 flex flex-col justify-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 capitalize">
             {product.title.length > 70 ? product.title.slice(0, 70) + "..." : product.title}
           </h1>
           <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 pr-[25%] text-justify">

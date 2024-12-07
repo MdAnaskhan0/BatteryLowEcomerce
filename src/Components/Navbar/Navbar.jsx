@@ -14,6 +14,8 @@ const Navbar = () => {
   // Extract unique categories from the products array
   const categories = [...new Set(products.map((product) => product.category))];
 
+  
+
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center text-lg font-medium">
@@ -61,6 +63,7 @@ const Navbar = () => {
               <div className="absolute bg-white border rounded-lg shadow-lg mt-2 w-48">
                 {categories.map((category) => (
                   <Link
+                    onClick={() => setIsDropdownOpen(false)}
                     key={category}
                     to={`/categorys/${category}`}
                     className="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition duration-300 capitalize"

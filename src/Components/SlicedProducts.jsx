@@ -15,11 +15,11 @@ const SlicedProducts = () => {
   if (error)
     return <div className="text-center text-red-600 py-20">{error}</div>;
 
-  // Slice the products dynamically (first 4 products)
+  // Slice the products array to show only 12
   const sliceProducts = products.slice(0, 12);
 
   const handleShowDetails = (id) => {
-    navigate(`/product/${id}`); // Navigate to product details
+    navigate(`/product/${id}`); 
   };
 
   return (
@@ -37,7 +37,7 @@ const SlicedProducts = () => {
             <img
               src={product.image}
               alt={product.title}
-              className="w-full h-48 object-contain mb-8"
+              className="w-full h-48 object-contain mb-8 hover:scale-105 transition ease-in-out duration-300"
             />
             <h2 className="text-lg font-semibold my-5">
               {product.title.length > 20

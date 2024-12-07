@@ -17,7 +17,7 @@ const CategoryProduct = () => {
   const navigate = useNavigate();
 
   const handleShowDetails = (id) => {
-    navigate(`/product/${id}`); // Navigate to the product details page
+    navigate(`/product/${id}`);
   };
 
 

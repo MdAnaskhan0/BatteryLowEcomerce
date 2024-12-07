@@ -71,7 +71,7 @@ const Banner = () => {
                   {banner.title}
                 </h1>
                 <p className="text-lg md:text-2xl mb-6">{banner.description}</p>
-                <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg text-lg font-semibold">
+                <button className="bg-gradient-to-r from-indigo-700 to-indigo-900 hover:bg-gradient-to-r hover:from-indigo-900 hover:to-indigo-700 text-white py-2 px-6 rounded-lg text-lg font-semibold">
                   Start Shopping
                 </button>
               </div>
