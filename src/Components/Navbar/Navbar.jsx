@@ -21,16 +21,16 @@ const Navbar = () => {
         <Logo />
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex space-x-6 items-center">
+        <div className="hidden lg:flex space-x-6 items-center font-medium">
           <Link
             to="/"
-            className="text-gray-600 hover:text-gray-900 transition duration-300"
+            className="text-gray-600 hover:text-indigo-900 transition duration-300"
           >
             Home
           </Link>
           <Link
             to="/products"
-            className="text-gray-600 hover:text-gray-900 transition duration-300"
+            className="text-gray-600 hover:text-indigo-900 transition duration-300"
           >
             Products
           </Link>
@@ -39,7 +39,7 @@ const Navbar = () => {
           <div className="relative">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="text-gray-600 hover:text-gray-900 flex items-center"
+              className="text-gray-600 hover:text-indigo-900 flex items-center"
             >
               Categories
               <svg
@@ -64,7 +64,7 @@ const Navbar = () => {
                     onClick={() => setIsDropdownOpen(false)}
                     key={category}
                     to={`/categorys/${category}`}
-                    className="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition duration-300 capitalize"
+                    className="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-indigo-900 transition duration-300 capitalize"
                   >
                     {category}
                   </Link>
@@ -75,13 +75,13 @@ const Navbar = () => {
 
           <Link
             to="/about"
-            className="text-gray-600 hover:text-gray-900 transition duration-300"
+            className="text-gray-600 hover:text-indigo-900 transition duration-300"
           >
             About
           </Link>
           <Link
             to="/contact"
-            className="text-gray-600 hover:text-gray-900 transition duration-300"
+            className="text-gray-600 hover:text-indigo-900 transition duration-300"
           >
             Contact
           </Link>
