@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import BannerImg1 from "../assets/bg-01-free-img.jpg";
 import BannerImg2 from "../assets/bg-01-free-img2.jpg";
 import BannerImg3 from "../assets/bg-01-free-img3.jpg";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   const banners = [
@@ -19,13 +20,15 @@ const Banner = () => {
       id: 2,
       image: BannerImg2,
       title: "Upgrade Your Tech Game",
-      description: "Get the latest gadgets and electronics at unbeatable prices!",
+      description:
+        "Get the latest gadgets and electronics at unbeatable prices!",
     },
     {
       id: 3,
       image: BannerImg3,
       title: "Fresh Styles, Fresh Looks",
-      description: "Find your next outfit with our curated fashion collections!",
+      description:
+        "Find your next outfit with our curated fashion collections!",
     },
   ];
 
@@ -49,7 +52,6 @@ const Banner = () => {
             slidesPerView: 1,
           },
         }}
-
         className="w-full h-80 md:h-96 lg:h-[600px] xl:h-[700px]"
       >
         {banners.map((banner) => (
@@ -71,9 +73,12 @@ const Banner = () => {
                   {banner.title}
                 </h1>
                 <p className="text-lg md:text-2xl mb-6">{banner.description}</p>
-                <button className="bg-gradient-to-r from-indigo-700 to-indigo-900 hover:bg-gradient-to-r hover:from-indigo-900 hover:to-indigo-700 text-white py-2 px-6 rounded-lg text-lg font-semibold">
+                <Link
+                  to="/products"
+                  className="inline-block bg-yellow-500 text-black py-3 px-6 rounded-full text-lg font-semibold hover:bg-yellow-400 transition"
+                >
                   Start Shopping
-                </button>
+                </Link>
               </div>
             </div>
           </SwiperSlide>

@@ -15,28 +15,28 @@ const MobileMenu = () => {
       <div className="px-4 py-4 space-y-4">
         <Link
           to="/"
-          className="block text-gray-600 hover:text-gray-900 transition duration-300"
+          className="block text-gray-700 hover:text-indigo-600 transition duration-300 font-medium"
         >
           Home
         </Link>
         <Link
           to="/products"
-          className="block text-gray-600 hover:text-gray-900 transition duration-300"
+          className="block text-gray-700 hover:text-indigo-600 transition duration-300 font-medium"
         >
           Products
         </Link>
         <Link
           to="/about"
-          className="block text-gray-600 hover:text-gray-900 transition duration-300"
+          className="block text-gray-700 hover:text-indigo-600 transition duration-300 font-medium"
         >
           About
         </Link>
 
         {/* Categories Dropdown */}
-        <div>
+        <div className="relative">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="w-full text-left text-gray-600 flex items-center justify-between"
+            className="w-full text-left text-gray-700 flex items-center justify-between font-medium hover:text-indigo-600 transition duration-300"
           >
             Categories
             <svg
@@ -57,12 +57,12 @@ const MobileMenu = () => {
             </svg>
           </button>
           {isDropdownOpen && (
-            <div className="mt-2 space-y-2">
+            <div className="mt-2 bg-white border rounded-lg shadow-md">
               {categories.map((category) => (
                 <Link
                   key={category}
                   to={`/categorys/${category}`}
-                  className="block text-gray-600 px-4 py-2 rounded hover:bg-gray-100 transition duration-300 capitalize"
+                  className="block text-gray-700 px-4 py-2 rounded hover:bg-gray-100 transition duration-300 capitalize"
                 >
                   {category}
                 </Link>
@@ -73,7 +73,7 @@ const MobileMenu = () => {
 
         <Link
           to="/contact"
-          className="block text-gray-600 hover:text-gray-900 transition duration-300"
+          className="block text-gray-700 hover:text-indigo-600 transition duration-300 font-medium"
         >
           Contact
         </Link>

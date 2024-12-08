@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ProductsContext } from "../Context/ProductsContext";
 import { CartContext } from "../Context/CartContext";
 import ProductStar from "./ProductStar";
@@ -56,12 +56,12 @@ const AllProducts = () => {
             We offer a wide range of high-quality products at competitive
             prices.
           </p>
-          <a
-            href="#products"
+          <Link
+            to="/products"
             className="inline-block bg-yellow-500 text-black py-3 px-6 rounded-full text-lg font-semibold hover:bg-yellow-400 transition"
           >
             Start Shopping
-          </a>
+          </Link>
         </div>
       </div>
 

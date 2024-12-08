@@ -26,7 +26,7 @@ const OrderHistory = ({ cart, total, shipping = 100 }) => {
                   />
                 </td>
                 <td className="px-6 py-4 text-sm md:text-base">
-                  {product.title.length > 20? product.title.slice(0, 50) + "..." : product.title}
+                  {product.title.length > 20? product.title.slice(0, 15) + "..." : product.title}
                 </td>
                 <td className="px-6 py-4 text-sm md:text-base">
                   {product.discount
