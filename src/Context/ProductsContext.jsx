@@ -14,8 +14,9 @@ const ProductsProvider = ({ children }) => {
             setIsLoading(true);
             const response = await axios.get("https://fakestoreapi.in/api/products");
             setProducts(response.data.products);
-        // eslint-disable-next-line no-unused-vars
-        } catch (err) {
+        
+        } 
+        catch (err) {
             setError("Failed to fetch products. Please try again.");
         } finally {
             setIsLoading(false);

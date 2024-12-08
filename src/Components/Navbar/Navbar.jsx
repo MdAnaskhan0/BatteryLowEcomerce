@@ -11,19 +11,17 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { products } = useContext(ProductsContext);
 
-  // Extract unique categories from the products array
+  // Extract unique categories
   const categories = [...new Set(products.map((product) => product.category))];
-
-  
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center text-lg font-medium">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <Logo />
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6 items-center">
+        <div className="hidden lg:flex space-x-6 items-center">
           <Link
             to="/"
             className="text-gray-600 hover:text-gray-900 transition duration-300"
@@ -37,11 +35,11 @@ const Navbar = () => {
             Products
           </Link>
 
-          {/* Category Dropdown */}
+          {/* Categories Dropdown */}
           <div className="relative">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="text-gray-600 hover:text-gray-900 transition duration-300 flex items-center"
+              className="text-gray-600 hover:text-gray-900 flex items-center"
             >
               Categories
               <svg
@@ -81,7 +79,6 @@ const Navbar = () => {
           >
             About
           </Link>
-
           <Link
             to="/contact"
             className="text-gray-600 hover:text-gray-900 transition duration-300"
@@ -97,10 +94,10 @@ const Navbar = () => {
         <LoginSignupButton />
 
         {/* Mobile Hamburger Menu */}
-        <div className="md:hidden flex items-center">
+        <div className="lg:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-800 hover:text-gray-900 focus:outline-none"
+            className="text-gray-800 focus:outline-none"
           >
             <svg
               className="w-6 h-6"
