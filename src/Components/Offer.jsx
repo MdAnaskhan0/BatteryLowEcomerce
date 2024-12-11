@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import BannerImg from "../assets/cta-bg.jpg";
+import BannerImg from "../assets/BannerOffer.jpg";
 import { FaArrowRight } from "react-icons/fa";
 
 const Offer = () => {

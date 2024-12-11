@@ -1,0 +1,28 @@
+E-Shop | E-Commerce-App/
+├── public/
+├── src/
+│   ├── Components/
+│   │   ├── AllProducts.jsx       
+│   │   ├── Header.jsx            
+│   │   ├── Footer.jsx            
+│   │   ├── ScrollToTop.jsx      
+│   ├── Context/
+│   │   ├── ProductsContext.jsx   
+│   │   ├── CartContext.jsx       
+│   │   └── AuthContext.jsx       
+│   ├── Pages/
+│   │   ├── Home.jsx              
+│   │   ├── Cart.jsx              
+│   │   ├── SingleProduct.jsx     
+│   │   ├── About.jsx             
+│   │   ├── Contact.jsx           
+│   │   ├── CategoryProduct.jsx   
+│   │   ├── Signup.jsx            
+│   │   ├── Login.jsx            
+│   │   └── UserInfo.jsx          
+│   ├── Routes/
+│   │   └── PrivateRoute.jsx      
+│   ├── App.jsx                   
+│   ├── index.jsx                 
+│   └── styles.css                
+├── package.json                                  

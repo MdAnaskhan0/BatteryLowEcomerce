@@ -95,7 +95,7 @@ const Footer = () => {
 
         {/* Social Media Links */}
         <div className="mt-8 flex justify-center items-center space-x-6">
-          <p>Copyright © 2024 E-Shop Store | Powered by E-Shop Store</p>
+          <p>Copyright © 2024 E-Shop Store | Powered by E-Shop Store | Created by @Anas-Khan</p>
         </div>
       </div>
     </footer>
